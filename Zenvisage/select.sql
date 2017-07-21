@@ -1,0 +1,1 @@
+﻿SELECT location,month ,avg(temperature) FROM weather where location = 'BRBRGTWN' GROUP BY location, month 

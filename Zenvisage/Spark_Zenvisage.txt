@@ -1,0 +1,27 @@
+1> Zenvisage Back-End:
+	// Init
+	Database inMemoryDatabase
+	Map<String,Database> inMemoryDatabases 
+	// Load
+	loadData(){ 
+		inMemoryDatabase = createDatabase("real_estate","/data/real_estate.txt","/data/real_estate.csv");{
+			Database database = new Database(name,schemafile,datafile);{	
+				
+				// readSchema(String schemafilename){
+					ColumnMetadata columnMetadata{ 
+					location:	string,		indexed,	F,				F,				T,				F,					F,	0,		C
+					name		dataType	isIndexed	xAxisColumns	yAxisColumns	zAxisColumns	predicateColumns		unit	columnType 
+					}
+					Column column = new Column(columnMetadata, this);
+				}
+				
+				// datafile
+				
+			}
+			return database;
+		}
+		inMemoryDatabases.put("real_estate", inMemoryDatabase);
+		
+		
+	}
+	

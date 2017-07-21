@@ -1,0 +1,27 @@
+2017/05/14
+HDFS Catalog:
+hohai/
+├── data/
+│   ├── weather.txt
+│   └── weather.csv
+├── common/
+│   ├── metafilelocation
+│   └── metatable
+├── cashe/
+│   └── metacashe
+├── sql/
+│   ├── ***
+│   └── datetime
+└── parquet/
+│   ├── ***
+│   └── weather/
+         ├── _SUCCESS
+     └── part-*.parquet
+
+Create HDFS Interfaces
+
+2017/05/15
+select * from pg_tables where tablename = 'zenvisage_metatable'
+
+2017/05/17
+new Database(names.get(0), names.get(2), names.get(1), true);

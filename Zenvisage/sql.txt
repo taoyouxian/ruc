@@ -1,0 +1,22 @@
+ Select F_Key , ISNULL( F_C,0) as F_Count From (
+	Select F_Ind=0,  F_Key ='Current', F_C=COUNT(*) From T_Record where F_State=0
+	Union
+	Select F_Ind=1, F_Key ='Day', F_C=COUNT(*) From T_Record where Convert(varchar(10),F_CreateTm, 121) =Convert(varchar(10),GETDATE(), 121) 
+	Union
+	Select F_Ind=2, F_Key ='Week', F_C=COUNT(*) From T_Record where DATEDIFF( day , F_CreateTm , getdate())<=7
+	Union
+	Select F_Ind=3, F_Key ='Month', F_C=COUNT(*) From T_Record where DATEDIFF(  MONTH , F_CreateTm , getdate())<=1
+) a	 order By F_Ind
+
+
+  SELECT F_UserCaption ,count(*) as F_Count FROM V_Record GROUP BY F_UserCaption  
+  
+  SELECT F_OnTime ,count(*) as F_Count FROM V_Record GROUP BY F_OnTime 
+  
+  SELECT F_CreateDay ,count(*) as F_Count FROM V_Record GROUP BY F_CreateDay  
+  
+  SELECT F_ParentCode ,F_ParentCaption ,count(*) as F_Count FROM V_Record GROUP BY F_ParentCode, F_ParentCaption
+   
+  SELECT F_ParentCode ,F_ParentCaption , F_DictCaption ,count(*) as F_Count FROM V_Record GROUP BY F_ParentCode, F_ParentCaption, F_DictCaption 
+  
+  SELECT F_State ,count(*) as F_Count FROM V_Record GROUP BY F_State
