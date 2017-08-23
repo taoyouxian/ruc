@@ -47,7 +47,7 @@ hadoop fs –rm /user/t/ok.txt
 
 hadoop fs –rm [目录地址]
 
-hadoop fs –rmr /user/t
+hadoop fs –rm -r /user/t
 
 8、在hadoop指定目录内创建新目录
 
